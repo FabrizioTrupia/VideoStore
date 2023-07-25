@@ -1,0 +1,31 @@
+server:
+  port: 8085
+
+
+spring:
+  application:
+    name: video_store_exam
+
+
+  #CONFIGURAZIONE DI CONNESIONE AL DB
+  datasource:
+    url: jdbc:mysql://localhost:3306/video_store_exam?createDatabaseIfNotExist=true&autoReconnect=true&useSLL=false
+    username: root
+    password: fabeer1995
+
+  #CONFIGURAZIONE JPA
+  jpa:
+    hibernate:
+
+      ddl-auto: update
+    properties:
+      dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    open-in-view: false
+
+logging:
+  level:
+    it.cgmconsulting.trupia: info
+    org:
+      springframework: info
+      hibernate.type.descriptor.sql.BasicBinder: trace
